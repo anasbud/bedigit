@@ -1,0 +1,24 @@
+# Source files (only ship dist/)
+src/
+assets/
+*.html
+style.css
+vite.config.js
+
+# Development files
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Documentation (optional - remove if you want to include)
+*.md
+!README.md
