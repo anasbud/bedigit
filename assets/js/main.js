@@ -11,16 +11,60 @@
 	$(document).ready(function() {
 
 		/* ==================================================
-		    # Dark Mode Toggle
+		    # Dark Mode Toggle with System Preference & Session Storage
 		===============================================*/
+		// Check if user has manually selected a theme in this session
+		var userThemeChoice = sessionStorage.getItem('userThemeChoice');
+
+		if (userThemeChoice !== null) {
+			// User has made a manual choice - use that
+			if (userThemeChoice === 'dark') {
+				$("body").addClass("bg-dark");
+				$(".radio-inner").addClass("active");
+			} else {
+				$("body").removeClass("bg-dark");
+				$(".radio-inner").removeClass("active");
+			}
+		} else {
+			// No manual choice - follow system preference
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				$("body").addClass("bg-dark");
+				$(".radio-inner").addClass("active");
+			}
+		}
+
+		// Listen for system theme changes (only if user hasn't made a manual choice)
+		if (window.matchMedia) {
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+				// Only auto-switch if user hasn't manually selected a theme
+				if (sessionStorage.getItem('userThemeChoice') === null) {
+					if (e.matches) {
+						$("body").addClass("bg-dark");
+						$(".radio-inner").addClass("active");
+					} else {
+						$("body").removeClass("bg-dark");
+						$(".radio-inner").removeClass("active");
+					}
+				}
+			});
+		}
+
 		$(".radio-btn").on("click", function() {
             $(".radio-inner").toggleClass("active");
             $("body").toggleClass("bg-dark");
+
+			// Save user's manual choice to session storage
+			var isDark = $("body").hasClass("bg-dark");
+			sessionStorage.setItem('userThemeChoice', isDark ? 'dark' : 'light');
         })
 
 		$(".radio-btn-light").on("click", function() {
             $(".radio-inner-light").toggleClass("active");
             $("body").toggleClass("bg-dark");
+
+			// Save user's manual choice to session storage
+			var isDark = $("body").hasClass("bg-dark");
+			sessionStorage.setItem('userThemeChoice', isDark ? 'dark' : 'light');
         })
 
 
