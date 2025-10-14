@@ -1,91 +1,4 @@
-/* ----------------------------------
 
-Template Name: Dixor - Creative Digital Agency Template
-Author: validtheme
-Description:
-Version: 1.0
-
-Main Font    : Barlow
-Main Color   : #f63b3b
-
--------------------------------------
-
-[Typography]
-
-Body copy:    15px 'Barlow', sans-serif
-Header:     36px 'Barlow', sans-serif
-Input, textarea:  16px 'Barlow', sans-serif
-Sidebar heading:  22px 'Barlow', sans-serif
-
->>> TABLE OF CONTENTS:
-=======================
-
-    01. Template default css
-        - Animations
-        - General
-        - Section Title
-        - Video Button
-        - Typography
-        - Tables
-        - Forms
-        - Buttons
-        - Pagination
-        - Colors
-        - Accordion
-        - Tabs
-    02. Preloader
-    03 Navbar
-        - Navbar Default
-        - Navbar Transparent
-        - Navbar Sticky
-        - Navbar Animation
-        - Side Navbar
-    04. Home Page
-        - Home Main
-        - Creative Agency
-        - Showcase Carousel
-        - Showcase Slider
-        - Design Studio
-        - Modern Startup
-    05. Services
-        - Version One
-        - Version Two
-        - Version Three
-        - Version Four
-        - Service Single
-	06. About
-        - Version One
-        - Version Two
-    07. Project
-        - Project Showcase
-        - Project Carousel
-        - Project Grid
-        - Project Single
-    08. Why Choose Us
-    09. Team
-        - Team Version One
-        - Team Version Two
-        - Team Single
-    10. Testimonials
-    11. Why Choose Us
-    12. Faq
-    13. Progress
-    14. Brand / Partner
-    15. Feature
-    16. What We Offer
-    17. Pricing
-    18. Blog
-        - Standard
-        - Grid
-        - Left Sidebar
-        - Right Sidebar
-        - Single
-    21. Error 404
-    22. Footer
-    23. PHP Contact Form
-    24. Others
-
-*/
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800&display=swap');
 
@@ -100,8 +13,8 @@ Sidebar heading:  22px 'Barlow', sans-serif
 	--dark-secondary: #18191b;
 	--dark-optional: #2a2d32;
 	--white: #ffffff;
-	--color-primary: #C9F31D;
-	--color-secondary: #add40c;
+	--color-primary: #cee4f2;
+	--color-secondary: #1d3754;
 	--color-heading: #04000b;
 	--color-paragraph: #666666;
 	--box-shadow-primary: -1px 3px 10px 0 rgba(0, 0, 0, 0.6);
@@ -444,6 +357,10 @@ p {
 	.row {
 		--bs-gutter-x: 1.5rem;
 	}
+}
+
+.logo {
+    border: 1px solid var(--color-secondary);
 }
 
 .item-center {
@@ -4027,7 +3944,7 @@ a.btn-round-animation:hover::after {
 	content: "";
 	height: 100%;
 	width: 100%;
-	background: var(--bg-gradient);
+	background: var(--color-primary);
 	z-index: -1;
 	border-radius: 10px;
 }
