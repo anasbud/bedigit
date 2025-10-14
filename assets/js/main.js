@@ -100,7 +100,7 @@
 						$submitBtn.removeAttr('disabled');
 
 						// Show success message
-						$form.before('<div class="form-result alert alert-success">Merci! Votre formulaire a été envoyé avec succès.</div>');
+						$form.before('<div class="form-result alert alert-success">Thank you! Your form has been submitted successfully.</div>');
 
 						// Reset form
 						$form[0].reset();
@@ -119,7 +119,7 @@
 						$submitBtn.removeAttr('disabled');
 
 						// Show error message
-						$form.before('<div class="form-result alert alert-danger">Une erreur est survenue. Veuillez réessayer.</div>');
+						$form.before('<div class="form-result alert alert-danger">An error occurred. Please try again.</div>');
 
 						// Remove error message after 5 seconds
 						setTimeout(function() {
